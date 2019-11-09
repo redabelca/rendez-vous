@@ -1,11 +1,11 @@
 <template>
-    <section class="content-wrapper" style="min-height: 960px;">
+    <section class="content-wrapper" style="min-height: 95vh;">
         <section class="content-header">
             <h1>Permissions</h1>
         </section>
 
-        <section class="content">
-                <div class="col-xs-12">
+        <section class="card">
+                <div class="col-xs-12 card-body">
                     <form @submit.prevent="submitForm" novalidate>
                         <div class="box">
                             <div class="box-header with-border">

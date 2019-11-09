@@ -442,47 +442,45 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
-//
-//
 
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-    data: function data() {
-        return {
-            // Code...
-        };
-    },
+  data: function data() {
+    return {
+      // Code...
+    };
+  },
 
-    computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["mapGetters"])('ClientsSingle', ['item', 'loading'])),
-    created: function created() {
-        // Code ...
-    },
-    destroyed: function destroyed() {
-        this.resetState();
-    },
+  computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["mapGetters"])("ClientsSingle", ["item", "loading"])),
+  created: function created() {
+    // Code ...
+  },
+  destroyed: function destroyed() {
+    this.resetState();
+  },
 
-    methods: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["mapActions"])('ClientsSingle', ['storeData', 'resetState', 'setNom', 'setCin', 'setTel']), {
-        updateNom: function updateNom(e) {
-            this.setNom(e.target.value);
-        },
-        updateCin: function updateCin(e) {
-            this.setCin(e.target.value);
-        },
-        updateTel: function updateTel(e) {
-            this.setTel(e.target.value);
-        },
-        submitForm: function submitForm() {
-            var _this = this;
+  methods: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["mapActions"])("ClientsSingle", ["storeData", "resetState", "setNom", "setCin", "setTel"]), {
+    updateNom: function updateNom(e) {
+      this.setNom(e.target.value);
+    },
+    updateCin: function updateCin(e) {
+      this.setCin(e.target.value);
+    },
+    updateTel: function updateTel(e) {
+      this.setTel(e.target.value);
+    },
+    submitForm: function submitForm() {
+      var _this = this;
 
-            this.storeData().then(function () {
-                _this.$router.push({ name: 'clients.index' });
-                _this.$eventHub.$emit('create-success');
-            }).catch(function (error) {
-                console.error(error);
-            });
-        }
-    })
+      this.storeData().then(function () {
+        _this.$router.push({ name: "clients.index" });
+        _this.$eventHub.$emit("create-success");
+      }).catch(function (error) {
+        console.error(error);
+      });
+    }
+  })
 });
 
 /***/ }),
@@ -566,53 +564,51 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
-//
-//
 
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-    data: function data() {
-        return {
-            // Code...
-        };
-    },
+  data: function data() {
+    return {
+      // Code...
+    };
+  },
 
-    computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["mapGetters"])('ClientsSingle', ['item', 'loading'])),
-    created: function created() {
-        this.fetchData(this.$route.params.id);
-    },
-    destroyed: function destroyed() {
-        this.resetState();
-    },
+  computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["mapGetters"])("ClientsSingle", ["item", "loading"])),
+  created: function created() {
+    this.fetchData(this.$route.params.id);
+  },
+  destroyed: function destroyed() {
+    this.resetState();
+  },
 
-    watch: {
-        "$route.params.id": function $routeParamsId() {
-            this.resetState();
-            this.fetchData(this.$route.params.id);
-        }
+  watch: {
+    "$route.params.id": function $routeParamsId() {
+      this.resetState();
+      this.fetchData(this.$route.params.id);
+    }
+  },
+  methods: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["mapActions"])("ClientsSingle", ["fetchData", "updateData", "resetState", "setNom", "setCin", "setTel"]), {
+    updateNom: function updateNom(e) {
+      this.setNom(e.target.value);
     },
-    methods: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["mapActions"])('ClientsSingle', ['fetchData', 'updateData', 'resetState', 'setNom', 'setCin', 'setTel']), {
-        updateNom: function updateNom(e) {
-            this.setNom(e.target.value);
-        },
-        updateCin: function updateCin(e) {
-            this.setCin(e.target.value);
-        },
-        updateTel: function updateTel(e) {
-            this.setTel(e.target.value);
-        },
-        submitForm: function submitForm() {
-            var _this = this;
+    updateCin: function updateCin(e) {
+      this.setCin(e.target.value);
+    },
+    updateTel: function updateTel(e) {
+      this.setTel(e.target.value);
+    },
+    submitForm: function submitForm() {
+      var _this = this;
 
-            this.updateData().then(function () {
-                _this.$router.push({ name: 'clients.index' });
-                _this.$eventHub.$emit('update-success');
-            }).catch(function (error) {
-                console.error(error);
-            });
-        }
-    })
+      this.updateData().then(function () {
+        _this.$router.push({ name: "clients.index" });
+        _this.$eventHub.$emit("update-success");
+      }).catch(function (error) {
+        console.error(error);
+      });
+    }
+  })
 });
 
 /***/ }),
@@ -682,11 +678,6 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
-//
-//
-//
-//
-//
 
 
 
@@ -697,12 +688,39 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
         return {
-            columns: [{ title: '#', field: 'id', sortable: true, colStyle: 'width: 50px;' }, { title: 'Nom', field: 'nom', sortable: true }, { title: 'CIN', field: 'cin', sortable: true }, { title: 'Tel', field: 'tel', sortable: true }, { title: 'Actions', tdComp: __WEBPACK_IMPORTED_MODULE_1__dtmodules_DatatableActions___default.a, visible: true, thClass: 'text-right', tdClass: 'text-right', colStyle: 'width: 130px;' }],
-            query: { sort: 'id', order: 'desc' },
+            columns: [{
+                title: "#",
+                field: "id",
+                sortable: true,
+                colStyle: "width: 50px;"
+            }, {
+                title: "Nom",
+                field: "nom",
+                sortable: true
+            }, {
+                title: "CIN",
+                field: "cin",
+                sortable: true
+            }, {
+                title: "Tel",
+                field: "tel",
+                sortable: true
+            }, {
+                title: "Actions",
+                tdComp: __WEBPACK_IMPORTED_MODULE_1__dtmodules_DatatableActions___default.a,
+                visible: true,
+                thClass: "text-right",
+                tdClass: "text-right",
+                colStyle: "width: 130px;"
+            }],
+            query: {
+                sort: "id",
+                order: "desc"
+            },
             xprops: {
-                module: 'ClientsIndex',
-                route: 'clients',
-                permission_prefix: 'client_'
+                module: "ClientsIndex",
+                route: "clients",
+                permission_prefix: "client_"
             }
         };
     },
@@ -714,7 +732,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
         this.resetState();
     },
 
-    computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["mapGetters"])('ClientsIndex', ['data', 'total', 'loading', 'relationships'])),
+    computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["mapGetters"])("ClientsIndex", ["data", "total", "loading", "relationships"])),
     watch: {
         query: {
             handler: function handler(query) {
@@ -724,7 +742,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
             deep: true
         }
     },
-    methods: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["mapActions"])('ClientsIndex', ['fetchData', 'setQuery', 'resetState']))
+    methods: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["mapActions"])("ClientsIndex", ["fetchData", "setQuery", "resetState"]))
 });
 
 /***/ }),
@@ -791,26 +809,26 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-    data: function data() {
-        return {
-            // Code...
-        };
-    },
-    created: function created() {
-        this.fetchData(this.$route.params.id);
-    },
-    destroyed: function destroyed() {
-        this.resetState();
-    },
+  data: function data() {
+    return {
+      // Code...
+    };
+  },
+  created: function created() {
+    this.fetchData(this.$route.params.id);
+  },
+  destroyed: function destroyed() {
+    this.resetState();
+  },
 
-    computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["mapGetters"])('ClientsSingle', ['item'])),
-    watch: {
-        "$route.params.id": function $routeParamsId() {
-            this.resetState();
-            this.fetchData(this.$route.params.id);
-        }
-    },
-    methods: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["mapActions"])('ClientsSingle', ['fetchData', 'resetState']))
+  computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["mapGetters"])("ClientsSingle", ["item"])),
+  watch: {
+    "$route.params.id": function $routeParamsId() {
+      this.resetState();
+      this.fetchData(this.$route.params.id);
+    }
+  },
+  methods: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["mapActions"])("ClientsSingle", ["fetchData", "resetState"]))
 });
 
 /***/ }),
@@ -1076,11 +1094,6 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
-//
-//
-//
-//
-//
 
 
 
@@ -1091,8 +1104,27 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
         return {
-            columns: [{ title: '#', field: 'id', sortable: true, colStyle: 'width: 50px;' }, { title: 'Titre', field: 'title', sortable: true }, { title: 'Actions', tdComp: __WEBPACK_IMPORTED_MODULE_1__dtmodules_DatatableActions___default.a, visible: true, thClass: 'text-right', tdClass: 'text-right', colStyle: 'width: 130px;' }],
-            query: { sort: 'id', order: 'desc' },
+            columns: [{
+                title: '#',
+                field: 'id',
+                sortable: true,
+                colStyle: 'width: 50px;'
+            }, {
+                title: 'Titre',
+                field: 'title',
+                sortable: true
+            }, {
+                title: 'Actions',
+                tdComp: __WEBPACK_IMPORTED_MODULE_1__dtmodules_DatatableActions___default.a,
+                visible: true,
+                thClass: 'text-right',
+                tdClass: 'text-right',
+                colStyle: 'width: 130px;'
+            }],
+            query: {
+                sort: 'id',
+                order: 'desc'
+            },
             xprops: {
                 module: 'PermissionsIndex',
                 route: 'permissions',
@@ -1177,26 +1209,26 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-    data: function data() {
-        return {
-            // Code...
-        };
-    },
-    created: function created() {
-        this.fetchData(this.$route.params.id);
-    },
-    destroyed: function destroyed() {
-        this.resetState();
-    },
+  data: function data() {
+    return {
+      // Code...
+    };
+  },
+  created: function created() {
+    this.fetchData(this.$route.params.id);
+  },
+  destroyed: function destroyed() {
+    this.resetState();
+  },
 
-    computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["mapGetters"])('PermissionsSingle', ['item'])),
-    watch: {
-        "$route.params.id": function $routeParamsId() {
-            this.resetState();
-            this.fetchData(this.$route.params.id);
-        }
-    },
-    methods: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["mapActions"])('PermissionsSingle', ['fetchData', 'resetState']))
+  computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["mapGetters"])("PermissionsSingle", ["item"])),
+  watch: {
+    "$route.params.id": function $routeParamsId() {
+      this.resetState();
+      this.fetchData(this.$route.params.id);
+    }
+  },
+  methods: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["mapActions"])("PermissionsSingle", ["fetchData", "resetState"]))
 });
 
 /***/ }),
@@ -1267,45 +1299,42 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
-//
-//
-//
 
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-    data: function data() {
-        return {
-            // Code...
-        };
-    },
+  data: function data() {
+    return {
+      // Code...
+    };
+  },
 
-    computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["mapGetters"])('RendezvousesSingle', ['item', 'loading', 'clientsAll'])),
-    created: function created() {
-        this.fetchClientsAll();
-    },
-    destroyed: function destroyed() {
-        this.resetState();
-    },
+  computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["mapGetters"])("RendezvousesSingle", ["item", "loading", "clientsAll"])),
+  created: function created() {
+    this.fetchClientsAll();
+  },
+  destroyed: function destroyed() {
+    this.resetState();
+  },
 
-    methods: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["mapActions"])('RendezvousesSingle', ['storeData', 'resetState', 'setMeetingdate', 'setClient', 'fetchClientsAll']), {
-        updateMeetingdate: function updateMeetingdate(e) {
-            this.setMeetingdate(e.target.value);
-        },
-        updateClient: function updateClient(value) {
-            this.setClient(value);
-        },
-        submitForm: function submitForm() {
-            var _this = this;
+  methods: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["mapActions"])("RendezvousesSingle", ["storeData", "resetState", "setMeetingdate", "setClient", "fetchClientsAll"]), {
+    updateMeetingdate: function updateMeetingdate(e) {
+      this.setMeetingdate(e.target.value);
+    },
+    updateClient: function updateClient(value) {
+      this.setClient(value);
+    },
+    submitForm: function submitForm() {
+      var _this = this;
 
-            this.storeData().then(function () {
-                _this.$router.push({ name: 'rendezvouses.index' });
-                _this.$eventHub.$emit('create-success');
-            }).catch(function (error) {
-                console.error(error);
-            });
-        }
-    })
+      this.storeData().then(function () {
+        _this.$router.push({ name: "rendezvouses.index" });
+        _this.$eventHub.$emit("create-success");
+      }).catch(function (error) {
+        console.error(error);
+      });
+    }
+  })
 });
 
 /***/ }),
@@ -1490,11 +1519,6 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
-//
-//
-//
-//
-//
 
 
 
@@ -1505,8 +1529,31 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
         return {
-            columns: [{ title: '#', field: 'id', sortable: true, colStyle: 'width: 50px;' }, { title: 'date de rendez-vous', field: 'meetingdate', sortable: true }, { title: 'Client', field: 'client', tdComp: __WEBPACK_IMPORTED_MODULE_2__dtmodules_DatatableSingle___default.a }, { title: 'Actions', tdComp: __WEBPACK_IMPORTED_MODULE_1__dtmodules_DatatableActions___default.a, visible: true, thClass: 'text-right', tdClass: 'text-right', colStyle: 'width: 130px;' }],
-            query: { sort: 'id', order: 'desc' },
+            columns: [{
+                title: '#',
+                field: 'id',
+                sortable: true,
+                colStyle: 'width: 50px;'
+            }, {
+                title: 'date de rendez-vous',
+                field: 'meetingdate',
+                sortable: true
+            }, {
+                title: 'Client',
+                field: 'client',
+                tdComp: __WEBPACK_IMPORTED_MODULE_2__dtmodules_DatatableSingle___default.a
+            }, {
+                title: 'Actions',
+                tdComp: __WEBPACK_IMPORTED_MODULE_1__dtmodules_DatatableActions___default.a,
+                visible: true,
+                thClass: 'text-right',
+                tdClass: 'text-right',
+                colStyle: 'width: 130px;'
+            }],
+            query: {
+                sort: 'id',
+                order: 'desc'
+            },
             xprops: {
                 module: 'RendezvousesIndex',
                 route: 'rendezvouses',
@@ -1595,30 +1642,31 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
+//
 
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-    data: function data() {
-        return {
-            // Code...
-        };
-    },
-    created: function created() {
-        this.fetchData(this.$route.params.id);
-    },
-    destroyed: function destroyed() {
-        this.resetState();
-    },
+  data: function data() {
+    return {
+      // Code...
+    };
+  },
+  created: function created() {
+    this.fetchData(this.$route.params.id);
+  },
+  destroyed: function destroyed() {
+    this.resetState();
+  },
 
-    computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["mapGetters"])('RendezvousesSingle', ['item'])),
-    watch: {
-        "$route.params.id": function $routeParamsId() {
-            this.resetState();
-            this.fetchData(this.$route.params.id);
-        }
-    },
-    methods: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["mapActions"])('RendezvousesSingle', ['fetchData', 'resetState']))
+  computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["mapGetters"])("RendezvousesSingle", ["item"])),
+  watch: {
+    "$route.params.id": function $routeParamsId() {
+      this.resetState();
+      this.fetchData(this.$route.params.id);
+    }
+  },
+  methods: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["mapActions"])("RendezvousesSingle", ["fetchData", "resetState"]))
 });
 
 /***/ }),
@@ -1691,44 +1739,42 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
-//
-//
 
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-    data: function data() {
-        return {
-            // Code...
-        };
-    },
+  data: function data() {
+    return {
+      // Code...
+    };
+  },
 
-    computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["mapGetters"])('RolesSingle', ['item', 'loading', 'permissionsAll'])),
-    created: function created() {
-        this.fetchPermissionsAll();
-    },
-    destroyed: function destroyed() {
-        this.resetState();
-    },
+  computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["mapGetters"])("RolesSingle", ["item", "loading", "permissionsAll"])),
+  created: function created() {
+    this.fetchPermissionsAll();
+  },
+  destroyed: function destroyed() {
+    this.resetState();
+  },
 
-    methods: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["mapActions"])('RolesSingle', ['storeData', 'resetState', 'setTitle', 'setPermission', 'fetchPermissionsAll']), {
-        updateTitle: function updateTitle(e) {
-            this.setTitle(e.target.value);
-        },
-        updatePermission: function updatePermission(value) {
-            this.setPermission(value);
-        },
-        submitForm: function submitForm() {
-            var _this = this;
+  methods: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["mapActions"])("RolesSingle", ["storeData", "resetState", "setTitle", "setPermission", "fetchPermissionsAll"]), {
+    updateTitle: function updateTitle(e) {
+      this.setTitle(e.target.value);
+    },
+    updatePermission: function updatePermission(value) {
+      this.setPermission(value);
+    },
+    submitForm: function submitForm() {
+      var _this = this;
 
-            this.storeData().then(function () {
-                _this.$router.push({ name: 'roles.index' });
-                _this.$eventHub.$emit('create-success');
-            }).catch(function (error) {
-                console.error(error);
-            });
-        }
-    })
+      this.storeData().then(function () {
+        _this.$router.push({ name: "roles.index" });
+        _this.$eventHub.$emit("create-success");
+      }).catch(function (error) {
+        console.error(error);
+      });
+    }
+  })
 });
 
 /***/ }),
@@ -1914,11 +1960,6 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
-//
-//
-//
-//
-//
 
 
 
@@ -1927,43 +1968,59 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  data: function data() {
-    return {
-      columns: [{ title: "#", field: "id", sortable: true, colStyle: "width: 50px;" }, { title: "Titre", field: "title", sortable: true }, { title: "Permissions", field: "permission", tdComp: __WEBPACK_IMPORTED_MODULE_3__dtmodules_DatatableList___default.a }, {
-        title: "Actions",
-        tdComp: __WEBPACK_IMPORTED_MODULE_1__dtmodules_DatatableActions___default.a,
-        visible: true,
-        thClass: "text-right",
-        tdClass: "text-right",
-        colStyle: "width: 130px;"
-      }],
-      query: { sort: "id", order: "desc" },
-      xprops: {
-        module: "RolesIndex",
-        route: "roles",
-        permission_prefix: "role_"
-      }
-    };
-  },
-  created: function created() {
-    this.$root.relationships = this.relationships;
-    this.fetchData();
-  },
-  destroyed: function destroyed() {
-    this.resetState();
-  },
+    data: function data() {
+        return {
+            columns: [{
+                title: "#",
+                field: "id",
+                sortable: true,
+                colStyle: "width: 50px;"
+            }, {
+                title: "Titre",
+                field: "title",
+                sortable: true
+            }, {
+                title: "Permissions",
+                field: "permission",
+                tdComp: __WEBPACK_IMPORTED_MODULE_3__dtmodules_DatatableList___default.a
+            }, {
+                title: "Actions",
+                tdComp: __WEBPACK_IMPORTED_MODULE_1__dtmodules_DatatableActions___default.a,
+                visible: true,
+                thClass: "text-right",
+                tdClass: "text-right",
+                colStyle: "width: 130px;"
+            }],
+            query: {
+                sort: "id",
+                order: "desc"
+            },
+            xprops: {
+                module: "RolesIndex",
+                route: "roles",
+                permission_prefix: "role_"
+            }
+        };
+    },
+    created: function created() {
+        this.$root.relationships = this.relationships;
+        this.fetchData();
+    },
+    destroyed: function destroyed() {
+        this.resetState();
+    },
 
-  computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["mapGetters"])("RolesIndex", ["data", "total", "loading", "relationships"])),
-  watch: {
-    query: {
-      handler: function handler(query) {
-        this.setQuery(query);
-      },
+    computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["mapGetters"])("RolesIndex", ["data", "total", "loading", "relationships"])),
+    watch: {
+        query: {
+            handler: function handler(query) {
+                this.setQuery(query);
+            },
 
-      deep: true
-    }
-  },
-  methods: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["mapActions"])("RolesIndex", ["fetchData", "setQuery", "resetState"]))
+            deep: true
+        }
+    },
+    methods: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["mapActions"])("RolesIndex", ["fetchData", "setQuery", "resetState"]))
 });
 
 /***/ }),
@@ -2031,26 +2088,26 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-    data: function data() {
-        return {
-            // Code...
-        };
-    },
-    created: function created() {
-        this.fetchData(this.$route.params.id);
-    },
-    destroyed: function destroyed() {
-        this.resetState();
-    },
+  data: function data() {
+    return {
+      // Code...
+    };
+  },
+  created: function created() {
+    this.fetchData(this.$route.params.id);
+  },
+  destroyed: function destroyed() {
+    this.resetState();
+  },
 
-    computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["mapGetters"])('RolesSingle', ['item'])),
-    watch: {
-        "$route.params.id": function $routeParamsId() {
-            this.resetState();
-            this.fetchData(this.$route.params.id);
-        }
-    },
-    methods: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["mapActions"])('RolesSingle', ['fetchData', 'resetState']))
+  computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["mapGetters"])("RolesSingle", ["item"])),
+  watch: {
+    "$route.params.id": function $routeParamsId() {
+      this.resetState();
+      this.fetchData(this.$route.params.id);
+    }
+  },
+  methods: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["mapActions"])("RolesSingle", ["fetchData", "resetState"]))
 });
 
 /***/ }),
@@ -2144,50 +2201,48 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
-//
-//
 
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-    data: function data() {
-        return {
-            // Code...
-        };
-    },
+  data: function data() {
+    return {
+      // Code...
+    };
+  },
 
-    computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["mapGetters"])('UsersSingle', ['item', 'loading', 'rolesAll'])),
-    created: function created() {
-        this.fetchRolesAll();
-    },
-    destroyed: function destroyed() {
-        this.resetState();
-    },
+  computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["mapGetters"])("UsersSingle", ["item", "loading", "rolesAll"])),
+  created: function created() {
+    this.fetchRolesAll();
+  },
+  destroyed: function destroyed() {
+    this.resetState();
+  },
 
-    methods: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["mapActions"])('UsersSingle', ['storeData', 'resetState', 'setName', 'setEmail', 'setPassword', 'setRole', 'fetchRolesAll']), {
-        updateName: function updateName(e) {
-            this.setName(e.target.value);
-        },
-        updateEmail: function updateEmail(e) {
-            this.setEmail(e.target.value);
-        },
-        updatePassword: function updatePassword(e) {
-            this.setPassword(e.target.value);
-        },
-        updateRole: function updateRole(value) {
-            this.setRole(value);
-        },
-        submitForm: function submitForm() {
-            var _this = this;
+  methods: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["mapActions"])("UsersSingle", ["storeData", "resetState", "setName", "setEmail", "setPassword", "setRole", "fetchRolesAll"]), {
+    updateName: function updateName(e) {
+      this.setName(e.target.value);
+    },
+    updateEmail: function updateEmail(e) {
+      this.setEmail(e.target.value);
+    },
+    updatePassword: function updatePassword(e) {
+      this.setPassword(e.target.value);
+    },
+    updateRole: function updateRole(value) {
+      this.setRole(value);
+    },
+    submitForm: function submitForm() {
+      var _this = this;
 
-            this.storeData().then(function () {
-                _this.$router.push({ name: 'users.index' });
-                _this.$eventHub.$emit('create-success');
-            }).catch(function (error) {
-                console.error(error);
-            });
-        }
-    })
+      this.storeData().then(function () {
+        _this.$router.push({ name: "users.index" });
+        _this.$eventHub.$emit("create-success");
+      }).catch(function (error) {
+        console.error(error);
+      });
+    }
+  })
 });
 
 /***/ }),
@@ -2400,11 +2455,6 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
-//
-//
-//
-//
-//
 
 
 
@@ -2415,8 +2465,35 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
         return {
-            columns: [{ title: '#', field: 'id', sortable: true, colStyle: 'width: 50px;' }, { title: 'Nom', field: 'name', sortable: true }, { title: 'Email', field: 'email', sortable: true }, { title: 'Role', field: 'role', tdComp: __WEBPACK_IMPORTED_MODULE_3__dtmodules_DatatableList___default.a }, { title: 'Actions', tdComp: __WEBPACK_IMPORTED_MODULE_1__dtmodules_DatatableActions___default.a, visible: true, thClass: 'text-right', tdClass: 'text-right', colStyle: 'width: 130px;' }],
-            query: { sort: 'id', order: 'desc' },
+            columns: [{
+                title: '#',
+                field: 'id',
+                sortable: true,
+                colStyle: 'width: 50px;'
+            }, {
+                title: 'Nom',
+                field: 'name',
+                sortable: true
+            }, {
+                title: 'Email',
+                field: 'email',
+                sortable: true
+            }, {
+                title: 'Role',
+                field: 'role',
+                tdComp: __WEBPACK_IMPORTED_MODULE_3__dtmodules_DatatableList___default.a
+            }, {
+                title: 'Actions',
+                tdComp: __WEBPACK_IMPORTED_MODULE_1__dtmodules_DatatableActions___default.a,
+                visible: true,
+                thClass: 'text-right',
+                tdClass: 'text-right',
+                colStyle: 'width: 130px;'
+            }],
+            query: {
+                sort: 'id',
+                order: 'desc'
+            },
             xprops: {
                 module: 'UsersIndex',
                 route: 'users',
@@ -2507,32 +2584,30 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
-//
-//
 
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-    data: function data() {
-        return {
-            // Code...
-        };
-    },
-    created: function created() {
-        this.fetchData(this.$route.params.id);
-    },
-    destroyed: function destroyed() {
-        this.resetState();
-    },
+  data: function data() {
+    return {
+      // Code...
+    };
+  },
+  created: function created() {
+    this.fetchData(this.$route.params.id);
+  },
+  destroyed: function destroyed() {
+    this.resetState();
+  },
 
-    computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["mapGetters"])('UsersSingle', ['item'])),
-    watch: {
-        "$route.params.id": function $routeParamsId() {
-            this.resetState();
-            this.fetchData(this.$route.params.id);
-        }
-    },
-    methods: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["mapActions"])('UsersSingle', ['fetchData', 'resetState']))
+  computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["mapGetters"])("UsersSingle", ["item"])),
+  watch: {
+    "$route.params.id": function $routeParamsId() {
+      this.resetState();
+      this.fetchData(this.$route.params.id);
+    }
+  },
+  methods: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["mapActions"])("UsersSingle", ["fetchData", "resetState"]))
 });
 
 /***/ }),
@@ -2735,7 +2810,7 @@ exports = module.exports = __webpack_require__("./node_modules/css-loader/lib/cs
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -2810,7 +2885,7 @@ exports = module.exports = __webpack_require__("./node_modules/css-loader/lib/cs
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -2825,7 +2900,7 @@ exports = module.exports = __webpack_require__("./node_modules/css-loader/lib/cs
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -2840,7 +2915,7 @@ exports = module.exports = __webpack_require__("./node_modules/css-loader/lib/cs
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -2870,7 +2945,7 @@ exports = module.exports = __webpack_require__("./node_modules/css-loader/lib/cs
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -2885,7 +2960,7 @@ exports = module.exports = __webpack_require__("./node_modules/css-loader/lib/cs
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -2900,7 +2975,7 @@ exports = module.exports = __webpack_require__("./node_modules/css-loader/lib/cs
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -2930,7 +3005,7 @@ exports = module.exports = __webpack_require__("./node_modules/css-loader/lib/cs
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -2960,7 +3035,7 @@ exports = module.exports = __webpack_require__("./node_modules/css-loader/lib/cs
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -2975,7 +3050,7 @@ exports = module.exports = __webpack_require__("./node_modules/css-loader/lib/cs
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -2990,7 +3065,7 @@ exports = module.exports = __webpack_require__("./node_modules/css-loader/lib/cs
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -3050,7 +3125,7 @@ exports = module.exports = __webpack_require__("./node_modules/css-loader/lib/cs
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -3080,7 +3155,7 @@ exports = module.exports = __webpack_require__("./node_modules/css-loader/lib/cs
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -3095,7 +3170,7 @@ exports = module.exports = __webpack_require__("./node_modules/css-loader/lib/cs
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -23478,7 +23553,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "section",
-    { staticClass: "content-wrapper", staticStyle: { "min-height": "960px" } },
+    { staticClass: "content-wrapper", staticStyle: { "min-height": "95vh" } },
     [
       _vm._m(0),
       _vm._v(" "),
@@ -23501,7 +23576,7 @@ var render = function() {
                         },
                         [
                           _c("i", { staticClass: "fa fa-plus" }),
-                          _vm._v(" Add new\n                            ")
+                          _vm._v(" Add new\n                        ")
                         ]
                       )
                     : _vm._e(),
@@ -23518,7 +23593,7 @@ var render = function() {
                         staticClass: "fa fa-refresh",
                         class: { "fa-spin": _vm.loading }
                       }),
-                      _vm._v(" Refresh\n                            ")
+                      _vm._v(" Refresh\n                        ")
                     ]
                   )
                 ],
@@ -23526,28 +23601,34 @@ var render = function() {
               )
             ]),
             _vm._v(" "),
-            _c(
-              "div",
-              { staticClass: "box-body" },
-              [
-                _vm.loading
-                  ? _c("div", { staticClass: "row" }, [_vm._m(2)])
-                  : _vm._e(),
-                _vm._v(" "),
-                !_vm.loading
-                  ? _c("datatable", {
-                      attrs: {
-                        columns: _vm.columns,
-                        data: _vm.data,
-                        total: _vm.total,
-                        query: _vm.query,
-                        xprops: _vm.xprops
-                      }
-                    })
-                  : _vm._e()
-              ],
-              1
-            )
+            _c("div", { staticClass: "box-body" }, [
+              _vm.loading
+                ? _c("div", { staticClass: "row" }, [_vm._m(2)])
+                : _vm._e(),
+              _vm._v(" "),
+              _c("div", { staticClass: "card" }, [
+                _c("div", { staticClass: "card-body" }, [
+                  _c(
+                    "div",
+                    { staticClass: "table-responsive" },
+                    [
+                      !_vm.loading
+                        ? _c("datatable", {
+                            attrs: {
+                              columns: _vm.columns,
+                              data: _vm.data,
+                              total: _vm.total,
+                              query: _vm.query,
+                              xprops: _vm.xprops
+                            }
+                          })
+                        : _vm._e()
+                    ],
+                    1
+                  )
+                ])
+              ])
+            ])
           ])
         ])
       ])
@@ -23578,7 +23659,7 @@ var staticRenderFns = [
     return _c("div", { staticClass: "col-xs-4 col-xs-offset-4" }, [
       _c("div", { staticClass: "alert text-center" }, [
         _c("i", { staticClass: "fa fa-spin fa-refresh" }),
-        _vm._v(" Loading\n                                ")
+        _vm._v(" Loading\n                            ")
       ])
     ])
   }
@@ -23712,12 +23793,12 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "section",
-    { staticClass: "content-wrapper", staticStyle: { "min-height": "960px" } },
+    { staticClass: "content-wrapper", staticStyle: { "min-height": "95vh" } },
     [
       _vm._m(0),
       _vm._v(" "),
-      _c("section", { staticClass: "content" }, [
-        _c("div", { staticClass: "col-xs-12" }, [
+      _c("section", { staticClass: "card" }, [
+        _c("div", { staticClass: "col-xs-12 card-body" }, [
           _c(
             "form",
             {
@@ -23915,12 +23996,12 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "section",
-    { staticClass: "content-wrapper", staticStyle: { "min-height": "960px" } },
+    { staticClass: "content-wrapper", staticStyle: { "min-height": "95vh" } },
     [
       _vm._m(0),
       _vm._v(" "),
-      _c("section", { staticClass: "content" }, [
-        _c("div", { staticClass: "col-xs-12" }, [
+      _c("section", { staticClass: "card" }, [
+        _c("div", { staticClass: "col-xs-12 card-body" }, [
           _c(
             "form",
             {
@@ -24035,11 +24116,7 @@ var render = function() {
                             disabled: _vm.loading
                           }
                         },
-                        [
-                          _vm._v(
-                            "\n                                Save\n                            "
-                          )
-                        ]
+                        [_vm._v("Save")]
                       )
                     ],
                     1
@@ -24092,12 +24169,12 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "section",
-    { staticClass: "content-wrapper", staticStyle: { "min-height": "960px" } },
+    { staticClass: "content-wrapper", staticStyle: { "min-height": "95vh" } },
     [
       _vm._m(0),
       _vm._v(" "),
-      _c("section", { staticClass: "content" }, [
-        _c("div", { staticClass: "col-xs-12" }, [
+      _c("section", { staticClass: "card" }, [
+        _c("div", { staticClass: "col-xs-12 card-body" }, [
           _c(
             "form",
             {
@@ -24179,11 +24256,7 @@ var render = function() {
                             disabled: _vm.loading
                           }
                         },
-                        [
-                          _vm._v(
-                            "\n                                Save\n                            "
-                          )
-                        ]
+                        [_vm._v("Save")]
                       )
                     ],
                     1
@@ -24247,9 +24320,9 @@ var render = function() {
             _vm._v(" "),
             _c("div", { staticClass: "box-body" }, [_c("back-buttton")], 1),
             _vm._v(" "),
-            _c("div", { staticClass: "box-body" }, [
-              _c("div", { staticClass: "row" }, [
-                _c("div", { staticClass: "col-xs-6" }, [
+            _c("div", { staticClass: "card" }, [
+              _c("div", { staticClass: "card-body" }, [
+                _c("div", { staticClass: "table-responsive" }, [
                   _c(
                     "table",
                     { staticClass: "table table-bordered table-striped" },
@@ -24276,13 +24349,7 @@ var render = function() {
                               return _c(
                                 "span",
                                 { staticClass: "label label-info" },
-                                [
-                                  _vm._v(
-                                    "\n                                                " +
-                                      _vm._s(permission.title) +
-                                      "\n                                            "
-                                  )
-                                ]
+                                [_vm._v(_vm._s(permission.title))]
                               )
                             }),
                             0
@@ -24338,12 +24405,12 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "section",
-    { staticClass: "content-wrapper", staticStyle: { "min-height": "960px" } },
+    { staticClass: "content-wrapper", staticStyle: { "min-height": "95vh" } },
     [
       _vm._m(0),
       _vm._v(" "),
-      _c("section", { staticClass: "content" }, [
-        _c("div", { staticClass: "col-xs-12" }, [
+      _c("section", { staticClass: "card" }, [
+        _c("div", { staticClass: "col-xs-12 card-body" }, [
           _c(
             "form",
             {
@@ -24515,7 +24582,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "section",
-    { staticClass: "content-wrapper", staticStyle: { "min-height": "960px" } },
+    { staticClass: "content-wrapper", staticStyle: { "min-height": "95vh" } },
     [
       _vm._m(0),
       _vm._v(" "),
@@ -24538,7 +24605,7 @@ var render = function() {
                         },
                         [
                           _c("i", { staticClass: "fa fa-plus" }),
-                          _vm._v(" Add new\n                            ")
+                          _vm._v(" Add new\n                        ")
                         ]
                       )
                     : _vm._e(),
@@ -24555,7 +24622,7 @@ var render = function() {
                         staticClass: "fa fa-refresh",
                         class: { "fa-spin": _vm.loading }
                       }),
-                      _vm._v(" Refresh\n                            ")
+                      _vm._v(" Refresh\n                        ")
                     ]
                   )
                 ],
@@ -24563,28 +24630,34 @@ var render = function() {
               )
             ]),
             _vm._v(" "),
-            _c(
-              "div",
-              { staticClass: "box-body" },
-              [
-                _vm.loading
-                  ? _c("div", { staticClass: "row" }, [_vm._m(2)])
-                  : _vm._e(),
-                _vm._v(" "),
-                !_vm.loading
-                  ? _c("datatable", {
-                      attrs: {
-                        columns: _vm.columns,
-                        data: _vm.data,
-                        total: _vm.total,
-                        query: _vm.query,
-                        xprops: _vm.xprops
-                      }
-                    })
-                  : _vm._e()
-              ],
-              1
-            )
+            _c("div", { staticClass: "box-body" }, [
+              _vm.loading
+                ? _c("div", { staticClass: "row" }, [_vm._m(2)])
+                : _vm._e(),
+              _vm._v(" "),
+              _c("div", { staticClass: "card" }, [
+                _c("div", { staticClass: "card-body" }, [
+                  _c(
+                    "div",
+                    { staticClass: "table-responsive" },
+                    [
+                      !_vm.loading
+                        ? _c("datatable", {
+                            attrs: {
+                              columns: _vm.columns,
+                              data: _vm.data,
+                              total: _vm.total,
+                              query: _vm.query,
+                              xprops: _vm.xprops
+                            }
+                          })
+                        : _vm._e()
+                    ],
+                    1
+                  )
+                ])
+              ])
+            ])
           ])
         ])
       ])
@@ -24615,7 +24688,7 @@ var staticRenderFns = [
     return _c("div", { staticClass: "col-xs-4 col-xs-offset-4" }, [
       _c("div", { staticClass: "alert text-center" }, [
         _c("i", { staticClass: "fa fa-spin fa-refresh" }),
-        _vm._v(" Loading\n                                ")
+        _vm._v(" Loading\n                            ")
       ])
     ])
   }
@@ -24640,7 +24713,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "section",
-    { staticClass: "content-wrapper", staticStyle: { "min-height": "960px" } },
+    { staticClass: "content-wrapper", staticStyle: { "min-height": "95vh" } },
     [
       _vm._m(0),
       _vm._v(" "),
@@ -24663,7 +24736,7 @@ var render = function() {
                         },
                         [
                           _c("i", { staticClass: "fa fa-plus" }),
-                          _vm._v(" Add new\n                            ")
+                          _vm._v(" Add new\n                        ")
                         ]
                       )
                     : _vm._e(),
@@ -24680,7 +24753,7 @@ var render = function() {
                         staticClass: "fa fa-refresh",
                         class: { "fa-spin": _vm.loading }
                       }),
-                      _vm._v(" Refresh\n                            ")
+                      _vm._v(" Refresh\n                        ")
                     ]
                   )
                 ],
@@ -24688,28 +24761,34 @@ var render = function() {
               )
             ]),
             _vm._v(" "),
-            _c(
-              "div",
-              { staticClass: "box-body" },
-              [
-                _vm.loading
-                  ? _c("div", { staticClass: "row" }, [_vm._m(2)])
-                  : _vm._e(),
-                _vm._v(" "),
-                !_vm.loading
-                  ? _c("datatable", {
-                      attrs: {
-                        columns: _vm.columns,
-                        data: _vm.data,
-                        total: _vm.total,
-                        query: _vm.query,
-                        xprops: _vm.xprops
-                      }
-                    })
-                  : _vm._e()
-              ],
-              1
-            )
+            _c("div", { staticClass: "box-body" }, [
+              _vm.loading
+                ? _c("div", { staticClass: "row" }, [_vm._m(2)])
+                : _vm._e(),
+              _vm._v(" "),
+              _c("div", { staticClass: "card" }, [
+                _c("div", { staticClass: "card-body" }, [
+                  _c(
+                    "div",
+                    { staticClass: "table-responsive" },
+                    [
+                      !_vm.loading
+                        ? _c("datatable", {
+                            attrs: {
+                              columns: _vm.columns,
+                              data: _vm.data,
+                              total: _vm.total,
+                              query: _vm.query,
+                              xprops: _vm.xprops
+                            }
+                          })
+                        : _vm._e()
+                    ],
+                    1
+                  )
+                ])
+              ])
+            ])
           ])
         ])
       ])
@@ -24740,7 +24819,7 @@ var staticRenderFns = [
     return _c("div", { staticClass: "col-xs-4 col-xs-offset-4" }, [
       _c("div", { staticClass: "alert text-center" }, [
         _c("i", { staticClass: "fa fa-spin fa-refresh" }),
-        _vm._v(" Loading\n                                ")
+        _vm._v(" Loading\n                            ")
       ])
     ])
   }
@@ -24765,7 +24844,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "section",
-    { staticClass: "content-wrapper", staticStyle: { "min-height": "960px" } },
+    { staticClass: "content-wrapper", staticStyle: { "min-height": "95vh" } },
     [
       _vm._m(0),
       _vm._v(" "),
@@ -24788,7 +24867,7 @@ var render = function() {
                         },
                         [
                           _c("i", { staticClass: "fa fa-plus" }),
-                          _vm._v(" Add new\n                            ")
+                          _vm._v(" Add new\n                        ")
                         ]
                       )
                     : _vm._e(),
@@ -24805,7 +24884,7 @@ var render = function() {
                         staticClass: "fa fa-refresh",
                         class: { "fa-spin": _vm.loading }
                       }),
-                      _vm._v(" Refresh\n                            ")
+                      _vm._v(" Refresh\n                        ")
                     ]
                   )
                 ],
@@ -24813,28 +24892,34 @@ var render = function() {
               )
             ]),
             _vm._v(" "),
-            _c(
-              "div",
-              { staticClass: "box-body" },
-              [
-                _vm.loading
-                  ? _c("div", { staticClass: "row" }, [_vm._m(2)])
-                  : _vm._e(),
-                _vm._v(" "),
-                !_vm.loading
-                  ? _c("datatable", {
-                      attrs: {
-                        columns: _vm.columns,
-                        data: _vm.data,
-                        total: _vm.total,
-                        query: _vm.query,
-                        xprops: _vm.xprops
-                      }
-                    })
-                  : _vm._e()
-              ],
-              1
-            )
+            _c("div", { staticClass: "box-body" }, [
+              _vm.loading
+                ? _c("div", { staticClass: "row" }, [_vm._m(2)])
+                : _vm._e(),
+              _vm._v(" "),
+              _c("div", { staticClass: "card" }, [
+                _c("div", { staticClass: "card-body" }, [
+                  _c(
+                    "div",
+                    { staticClass: "table-responsive" },
+                    [
+                      !_vm.loading
+                        ? _c("datatable", {
+                            attrs: {
+                              columns: _vm.columns,
+                              data: _vm.data,
+                              total: _vm.total,
+                              query: _vm.query,
+                              xprops: _vm.xprops
+                            }
+                          })
+                        : _vm._e()
+                    ],
+                    1
+                  )
+                ])
+              ])
+            ])
           ])
         ])
       ])
@@ -24865,7 +24950,7 @@ var staticRenderFns = [
     return _c("div", { staticClass: "col-xs-4 col-xs-offset-4" }, [
       _c("div", { staticClass: "alert text-center" }, [
         _c("i", { staticClass: "fa fa-spin fa-refresh" }),
-        _vm._v(" Loading\n                                ")
+        _vm._v(" Loading\n                            ")
       ])
     ])
   }
@@ -24923,7 +25008,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "section",
-    { staticClass: "content-wrapper", staticStyle: { "min-height": "960px" } },
+    { staticClass: "content-wrapper", staticStyle: { "min-height": "95vh" } },
     [
       _vm._m(0),
       _vm._v(" "),
@@ -24934,9 +25019,9 @@ var render = function() {
             _vm._v(" "),
             _c("div", { staticClass: "box-body" }, [_c("back-buttton")], 1),
             _vm._v(" "),
-            _c("div", { staticClass: "box-body" }, [
-              _c("div", { staticClass: "row" }, [
-                _c("div", { staticClass: "col-xs-6" }, [
+            _c("div", { staticClass: "card" }, [
+              _c("div", { staticClass: "card-body" }, [
+                _c("div", { staticClass: "table-responsive" }, [
                   _c(
                     "table",
                     { staticClass: "table table-bordered table-striped" },
@@ -25015,7 +25100,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "section",
-    { staticClass: "content-wrapper", staticStyle: { "min-height": "960px" } },
+    { staticClass: "content-wrapper", staticStyle: { "min-height": "95vh" } },
     [
       _vm._m(0),
       _vm._v(" "),
@@ -25163,12 +25248,12 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "section",
-    { staticClass: "content-wrapper", staticStyle: { "min-height": "960px" } },
+    { staticClass: "content-wrapper", staticStyle: { "min-height": "95vh" } },
     [
       _vm._m(0),
       _vm._v(" "),
-      _c("section", { staticClass: "content" }, [
-        _c("div", { staticClass: "col-xs-12" }, [
+      _c("section", { staticClass: "card" }, [
+        _c("div", { staticClass: "col-xs-12 card-body" }, [
           _c(
             "form",
             {
@@ -25253,11 +25338,7 @@ var render = function() {
                             disabled: _vm.loading
                           }
                         },
-                        [
-                          _vm._v(
-                            "\n                                Save\n                            "
-                          )
-                        ]
+                        [_vm._v("Save")]
                       )
                     ],
                     1
@@ -25310,7 +25391,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "section",
-    { staticClass: "content-wrapper", staticStyle: { "min-height": "960px" } },
+    { staticClass: "content-wrapper", staticStyle: { "min-height": "95vh" } },
     [
       _vm._m(0),
       _vm._v(" "),
@@ -25321,9 +25402,9 @@ var render = function() {
             _vm._v(" "),
             _c("div", { staticClass: "box-body" }, [_c("back-buttton")], 1),
             _vm._v(" "),
-            _c("div", { staticClass: "box-body" }, [
-              _c("div", { staticClass: "row" }, [
-                _c("div", { staticClass: "col-xs-6" }, [
+            _c("div", { staticClass: "card" }, [
+              _c("div", { staticClass: "card-body" }, [
+                _c("div", { staticClass: "table-responsive" }, [
                   _c(
                     "table",
                     { staticClass: "table table-bordered table-striped" },
@@ -25390,12 +25471,12 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "section",
-    { staticClass: "content-wrapper", staticStyle: { "min-height": "960px" } },
+    { staticClass: "content-wrapper", staticStyle: { "min-height": "95vh" } },
     [
       _vm._m(0),
       _vm._v(" "),
-      _c("section", { staticClass: "content" }, [
-        _c("div", { staticClass: "col-xs-12" }, [
+      _c("section", { staticClass: "card" }, [
+        _c("div", { staticClass: "col-xs-12 card-body" }, [
           _c(
             "form",
             {
@@ -25483,11 +25564,7 @@ var render = function() {
                             disabled: _vm.loading
                           }
                         },
-                        [
-                          _vm._v(
-                            "\n                                Save\n                            "
-                          )
-                        ]
+                        [_vm._v("Save")]
                       )
                     ],
                     1
@@ -25614,12 +25691,12 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "section",
-    { staticClass: "content-wrapper", staticStyle: { "min-height": "960px" } },
+    { staticClass: "content-wrapper", staticStyle: { "min-height": "95vh" } },
     [
       _vm._m(0),
       _vm._v(" "),
-      _c("section", { staticClass: "content" }, [
-        _c("div", { staticClass: "col-xs-12" }, [
+      _c("section", { staticClass: "card" }, [
+        _c("div", { staticClass: "col-xs-12 card-body" }, [
           _c(
             "form",
             {
@@ -25758,12 +25835,12 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "section",
-    { staticClass: "content-wrapper", staticStyle: { "min-height": "960px" } },
+    { staticClass: "content-wrapper", staticStyle: { "min-height": "95vh" } },
     [
       _vm._m(0),
       _vm._v(" "),
-      _c("section", { staticClass: "content" }, [
-        _c("div", { staticClass: "col-xs-12" }, [
+      _c("section", { staticClass: "card" }, [
+        _c("div", { staticClass: "col-xs-12 card-body" }, [
           _c(
             "form",
             {
@@ -25880,7 +25957,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "section",
-    { staticClass: "content-wrapper", staticStyle: { "min-height": "960px" } },
+    { staticClass: "content-wrapper", staticStyle: { "min-height": "95vh" } },
     [
       _vm._m(0),
       _vm._v(" "),
@@ -25903,7 +25980,7 @@ var render = function() {
                         },
                         [
                           _c("i", { staticClass: "fa fa-plus" }),
-                          _vm._v(" Add new\n            ")
+                          _vm._v(" Add new\n                        ")
                         ]
                       )
                     : _vm._e(),
@@ -25920,7 +25997,7 @@ var render = function() {
                         staticClass: "fa fa-refresh",
                         class: { "fa-spin": _vm.loading }
                       }),
-                      _vm._v(" Refresh\n            ")
+                      _vm._v(" Refresh\n                        ")
                     ]
                   )
                 ],
@@ -25928,28 +26005,34 @@ var render = function() {
               )
             ]),
             _vm._v(" "),
-            _c(
-              "div",
-              { staticClass: "box-body" },
-              [
-                _vm.loading
-                  ? _c("div", { staticClass: "row" }, [_vm._m(2)])
-                  : _vm._e(),
-                _vm._v(" "),
-                !_vm.loading
-                  ? _c("datatable", {
-                      attrs: {
-                        columns: _vm.columns,
-                        data: _vm.data,
-                        total: _vm.total,
-                        query: _vm.query,
-                        xprops: _vm.xprops
-                      }
-                    })
-                  : _vm._e()
-              ],
-              1
-            )
+            _c("div", { staticClass: "box-body" }, [
+              _vm.loading
+                ? _c("div", { staticClass: "row" }, [_vm._m(2)])
+                : _vm._e(),
+              _vm._v(" "),
+              _c("div", { staticClass: "card" }, [
+                _c("div", { staticClass: "card-body" }, [
+                  _c(
+                    "div",
+                    { staticClass: "table-responsive" },
+                    [
+                      !_vm.loading
+                        ? _c("datatable", {
+                            attrs: {
+                              columns: _vm.columns,
+                              data: _vm.data,
+                              total: _vm.total,
+                              query: _vm.query,
+                              xprops: _vm.xprops
+                            }
+                          })
+                        : _vm._e()
+                    ],
+                    1
+                  )
+                ])
+              ])
+            ])
           ])
         ])
       ])
@@ -25980,7 +26063,7 @@ var staticRenderFns = [
     return _c("div", { staticClass: "col-xs-4 col-xs-offset-4" }, [
       _c("div", { staticClass: "alert text-center" }, [
         _c("i", { staticClass: "fa fa-spin fa-refresh" }),
-        _vm._v(" Loading\n              ")
+        _vm._v(" Loading\n                            ")
       ])
     ])
   }
@@ -26037,12 +26120,12 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "section",
-    { staticClass: "content-wrapper", staticStyle: { "min-height": "960px" } },
+    { staticClass: "content-wrapper", staticStyle: { "min-height": "95vh" } },
     [
       _vm._m(0),
       _vm._v(" "),
-      _c("section", { staticClass: "content" }, [
-        _c("div", { staticClass: "col-xs-12" }, [
+      _c("section", { staticClass: "card" }, [
+        _c("div", { staticClass: "col-xs-12 card-body" }, [
           _c(
             "form",
             {
@@ -26130,11 +26213,7 @@ var render = function() {
                             disabled: _vm.loading
                           }
                         },
-                        [
-                          _vm._v(
-                            "\n                                Save\n                            "
-                          )
-                        ]
+                        [_vm._v("Save")]
                       )
                     ],
                     1
@@ -26187,7 +26266,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "section",
-    { staticClass: "content-wrapper", staticStyle: { "min-height": "960px" } },
+    { staticClass: "content-wrapper", staticStyle: { "min-height": "95vh" } },
     [
       _vm._m(0),
       _vm._v(" "),
@@ -26198,9 +26277,9 @@ var render = function() {
             _vm._v(" "),
             _c("div", { staticClass: "box-body" }, [_c("back-buttton")], 1),
             _vm._v(" "),
-            _c("div", { staticClass: "box-body" }, [
-              _c("div", { staticClass: "row" }, [
-                _c("div", { staticClass: "col-xs-6" }, [
+            _c("div", { staticClass: "card" }, [
+              _c("div", { staticClass: "card-body" }, [
+                _c("div", { staticClass: "table-responsive" }, [
                   _c(
                     "table",
                     { staticClass: "table table-bordered table-striped" },
@@ -26233,13 +26312,7 @@ var render = function() {
                               return _c(
                                 "span",
                                 { staticClass: "label label-info" },
-                                [
-                                  _vm._v(
-                                    "\n                                                " +
-                                      _vm._s(role.title) +
-                                      "\n                                            "
-                                  )
-                                ]
+                                [_vm._v(_vm._s(role.title))]
                               )
                             }),
                             0
@@ -26295,12 +26368,12 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "section",
-    { staticClass: "content-wrapper", staticStyle: { "min-height": "960px" } },
+    { staticClass: "content-wrapper", staticStyle: { "min-height": "95vh" } },
     [
       _vm._m(0),
       _vm._v(" "),
-      _c("section", { staticClass: "content" }, [
-        _c("div", { staticClass: "col-xs-12" }, [
+      _c("section", { staticClass: "card" }, [
+        _c("div", { staticClass: "col-xs-12 card-body" }, [
           _c(
             "form",
             {
@@ -26439,7 +26512,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "section",
-    { staticClass: "content-wrapper", staticStyle: { "min-height": "960px" } },
+    { staticClass: "content-wrapper", staticStyle: { "min-height": "95vh" } },
     [
       _vm._m(0),
       _vm._v(" "),
@@ -26450,9 +26523,9 @@ var render = function() {
             _vm._v(" "),
             _c("div", { staticClass: "box-body" }, [_c("back-buttton")], 1),
             _vm._v(" "),
-            _c("div", { staticClass: "box-body" }, [
-              _c("div", { staticClass: "row" }, [
-                _c("div", { staticClass: "col-xs-6" }, [
+            _c("div", { staticClass: "card" }, [
+              _c("div", { staticClass: "card-body" }, [
+                _c("div", { staticClass: "table-responsive" }, [
                   _c(
                     "table",
                     { staticClass: "table table-bordered table-striped" },
@@ -26478,13 +26551,7 @@ var render = function() {
                               ? _c(
                                   "span",
                                   { staticClass: "label label-info" },
-                                  [
-                                    _vm._v(
-                                      "\n                                                " +
-                                        _vm._s(_vm.item.client.nom) +
-                                        "\n                                            "
-                                    )
-                                  ]
+                                  [_vm._v(_vm._s(_vm.item.client.nom))]
                                 )
                               : _vm._e()
                           ])

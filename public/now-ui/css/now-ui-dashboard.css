@@ -1783,7 +1783,7 @@ a[data-toggle="collapse"][aria-expanded="true"] .caret,
     background: linear-gradient(0deg, rgba(44, 44, 44, 0.2), rgba(224, 23, 3, 0.6));
     /* Standard syntax */ }
 
-.dropdown-menu {
+/* .dropdown-menu {
   border: 0;
   box-shadow: 0px 10px 50px 0px rgba(0, 0, 0, 0.2);
   border-radius: 0.125rem;
@@ -1961,7 +1961,7 @@ a[data-toggle="collapse"][aria-expanded="true"] .caret,
     transform: translate3d(0, 1px, 0) !important; }
   .dropup.show:not(.bootstrap-select) .dropdown-menu, .dropdown-menu.bootstrap-datetimepicker-widget.top.open {
     -webkit-transform: translate3d(0, -2px, 0) !important;
-    transform: translate3d(0, -2px, 0) !important; }
+    transform: translate3d(0, -2px, 0) !important; } */
 
 .button-dropdown {
   padding-right: 0.7rem;

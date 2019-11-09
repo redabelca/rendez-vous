@@ -1,1 +1,4 @@
 @import '~vue-awesome-notifications/dist/styles/style.scss';
+.open .dropdown-menu {display: initial;opacity: 1;}
+.v-select ul.dropdown-menu {display: block ;}
+.table-resonsive {margin-bottom: 0;}
