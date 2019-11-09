@@ -1,6 +1,6 @@
 <template>
     <div>
-        <span class="label label-info" v-if="value !== null">
+        <span class="badge badge-success" v-if="value !== null">
             {{ value[$root.relationships[field]] }}
         </span>
     </div>

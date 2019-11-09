@@ -32,7 +32,7 @@
                       <th>Permissions</th>
                       <td>
                         <span
-                          class="label label-info"
+                          class="badge badge-success"
                           v-for="permission in item.permission"
                         >{{ permission.title }}</span>
                       </td>

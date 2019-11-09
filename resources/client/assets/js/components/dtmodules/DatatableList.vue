@@ -1,6 +1,6 @@
 <template>
     <div>
-        <span class="label label-info" v-for="item in value">
+        <span class="badge badge-success" v-for="item in value">
             {{ item[$root.relationships[field]] }}
         </span>
     </div>

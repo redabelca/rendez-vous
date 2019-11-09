@@ -32,7 +32,7 @@
                       <th>Client</th>
                       <td>
                         <span
-                          class="label label-info"
+                          class="badge badge-success"
                           v-if="item.client !== null"
                         >{{ item.client.nom }}</span>
                       </td>

@@ -35,7 +35,7 @@
                     <tr>
                       <th>Role</th>
                       <td>
-                        <span class="label label-info" v-for="role in item.role">{{ role.title }}</span>
+                        <span class="badge badge-success" v-for="role in item.role">{{ role.title }}</span>
                       </td>
                     </tr>
                   </tbody>

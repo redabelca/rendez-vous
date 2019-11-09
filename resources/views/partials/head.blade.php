@@ -26,5 +26,5 @@
 <link rel="stylesheet" href="{{ url('adminlte/css/skins/skin-blue.min.css') }}"> --}}
 
 <link href="{{asset('now-ui/css/now-ui-dashboard.css?v=1.3.0')}}" rel="stylesheet" />
-<link href="{{asset('now-ui/demo/demo.css')}}" rel="stylesheet" />
+{{-- <link href="{{asset('now-ui/demo/demo.css')}}" rel="stylesheet" /> --}}
 <link rel="stylesheet" href="{{ mix('/client/css/app.css') }}">

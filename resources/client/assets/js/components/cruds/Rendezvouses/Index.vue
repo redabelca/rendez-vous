@@ -35,7 +35,7 @@
                         <div class="card">
                             <div class="card-body">
                                 <div class="table-responsive">
-                                    <datatable v-if="!loading" :columns="columns" :data="data" :total="total" :query="query" :xprops="xprops" />
+                                    <datatable v-if="!loading" :columns="columns" :data="data" :total="total" :query="query" :xprops="xprops" :HeaderSettings="false" />
                                 </div>
                             </div>
                         </div>
