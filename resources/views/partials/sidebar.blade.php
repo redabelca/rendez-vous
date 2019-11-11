@@ -49,19 +49,6 @@
 				</router-link>
 			</li>
 
-			<li>
-				<router-link :to="{ name: 'auth.change_password' }">
-					<i class="now-ui-icons objects_key-25"></i>
-					<span>@lang('quickadmin.qa_change_password')</span>
-				</router-link>
-			</li>
-
-			<li>
-				<a href="#logout" onclick="$('#logout').submit();">
-					<i class="now-ui-icons arrows-1_minimal-left"></i>
-					<span>@lang('quickadmin.qa_logout')</span>
-				</a>
-			</li>
 		</ul>
 	</div>
 </div>

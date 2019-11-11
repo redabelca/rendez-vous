@@ -135,6 +135,15 @@ const app = new Vue({
             return {
                 'p-5 mt-5': this.$route.name != 'home'
             };
+        },
+        topnavbarClasses() {
+            return {
+                'navbar': true,
+                'navbar-expand-lg': true,
+                'navbar-transparent': this.$route.name == 'home',
+                'bg-primary': true,
+                'navbar-absolute': true,
+            }
         }
     },
     router,
