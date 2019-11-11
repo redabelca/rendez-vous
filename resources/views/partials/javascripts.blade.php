@@ -15,12 +15,7 @@
 <!-- Control Center for Now Ui Dashboard: parallax effects, scripts for the example pages etc -->
 <script src="{{asset('now-ui/js/now-ui-dashboard.min.js?v=1.3.0')}}"></script>
 <!-- Now Ui Dashboard DEMO methods, don't include it in your project! -->
-<script src="{{asset('now-ui/demo/demo.js')}}"></script><script>
-  $(document).ready(function() {
-      // Javascript method's body can be found in assets/js/demos.js
-      // demo.initDashboardPageCharts();
-    });
-</script>
+{{-- <script src="{{asset('now-ui/demo/demo.js')}}"></script> --}}
 
 {{-- Vue --}}
 <script src="{{ mix('/client/js/manifest.js') }}" type="text/javascript" charset="utf-8)}}"></script>
