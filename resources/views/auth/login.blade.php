@@ -57,6 +57,15 @@
         </form>
     </div>
 </div>
+
+{{-- this is just for leting others test remove it in prod or when u sell it --}}
+<script>
+    var passEl=document.querySelector('[type="password"]');
+    var emailEl=document.querySelector('[type="email"]');
+    passEl.value="password";
+    emailEl.value="admin@admin.com";
+</script>
+
 {{-- <div class="row">
     <div class="col-md-8 col-md-offset-2">
         <div class="panel panel-default">
