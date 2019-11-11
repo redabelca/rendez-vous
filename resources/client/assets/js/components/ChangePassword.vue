@@ -4,7 +4,7 @@
             <h1>Change Password</h1>
         </section>
 
-        <section class="content">
+        <section class="card p-4">
                 <form @submit.prevent="submitForm">
 
 
